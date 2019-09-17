@@ -107,3 +107,6 @@ print(TA.time)
 
 TA.call()
 print(TA.time)
+
+# https://github.com/GunhoChoi/PyTorch-FastCampus/blob/master/01_DL%26Pytorch/0_Python_Tutorial.ipynb
+# 해당 github을 참조하여 구성
