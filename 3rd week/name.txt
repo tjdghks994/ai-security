@@ -2,4 +2,4 @@ name : wooseong
 
 age: 24
 
-phone : 010
+phone : 010- 1234
