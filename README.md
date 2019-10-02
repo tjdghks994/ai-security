@@ -4,9 +4,10 @@
 # Indivisual Assessment
 - Due date: 10.18(fri)
 - Subject: PyTorch code comment
+- PR title: **본명(반드시)**, commit msg: **Submit the 1st assignment**
 - How to: 
-
 ````
+# Example
 # 함수 만들어 쓰기
 print("\n")
 def factorial(n):                               # factorial 함수 선언
@@ -21,5 +22,5 @@ print(factorial(6))
 - Reference: [PyTorch](https://pytorch.org/tutorials/), 
 [PyTorch-ko](https://9bow.github.io/PyTorch-tutorials-kr-0.3.1/index.html),
 [PyTorch-github](https://github.com/pytorch/tutorials/tree/master/beginner_source)
-
+- Advantage: 
 
