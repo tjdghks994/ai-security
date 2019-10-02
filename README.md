@@ -2,6 +2,7 @@
 2019 2학기 사이버보안융합전공 인공지능과 보안 실습 repository
 
 # Indivisual Assessment
+## 1st assignment
 - Due date: 10.18(fri)
 - Subject: PyTorch code comment
 - PR title: **본명(반드시)**, commit msg: **Submit the 1st assignment**
