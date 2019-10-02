@@ -22,5 +22,5 @@ print(factorial(6))
 - Reference: [PyTorch](https://pytorch.org/tutorials/), 
 [PyTorch-ko](https://9bow.github.io/PyTorch-tutorials-kr-0.3.1/index.html),
 [PyTorch-github](https://github.com/pytorch/tutorials/tree/master/beginner_source)
-- Advantage: 
+- Advantage: 다양한 함수에 대해 많은 검색을 통해 자세히 기술한 경우 높은 점수 부여
 
