@@ -1,5 +1,7 @@
 # Ai-Security
-2019 2학기 사이버보안융합전공 인공지능과 보안 실습 repository
+2019 2학기 중앙대학교 사이버보안융합전공 인공지능과 보안 실습 repository
+수요일 12:00 - 13:15
+조교: 박성환, 서예령
 
 # Indivisual Assessment
 ## 1st assignment
