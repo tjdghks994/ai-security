@@ -66,6 +66,9 @@ cf. Convolution과 Pooling Layer를 별개의 Layer으로 보기도 한다.
 
 ## VGG-16
 아래 그림은 VGG-16 Net의 전체 구성이다.
+![Alt text](../../../vgg16_1.jpg)
+![Alt text](../../../vgg16_2.jpg)
+
 
 위의 그림과 같이 CNN가 구성됨을 볼 수 있다.
 
