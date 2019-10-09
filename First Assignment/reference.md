@@ -22,6 +22,7 @@ Convolution(합성곱)이라고 하는 것은 3x3 행렬 두 개를 곱할 때 (
 하나의 합성곱 계층에는 입력되는 이미지의 채널 개수만큼 필터가 존재하며, 각 채널에 할당된 필터를 적용함으로써 합성곱 계층의 출력 이미지가 생성된다.
 
 ![Alt text](/img/conv.jpg)
+
 위의 그림이 convolution을 설명하는 그림이다. 주변의 회색 0은 이미지 사이즈의 감소를 막기 위한 zero padding이며, 이미지의 각 원소(ex. (1,0))와 Filter의 각 원소끼리 곱한 것의 합을 output으로 나타낸다.
 
 (해당 그림에서 zero padding을 했음에도 이미지 사이즈가 줄어드는 것(5x5 -> 3x3)은 convolution을 2칸씩 건너뛰며 수행했기 때문이다. 즉, stride(보폭)가 2인 경우)
@@ -32,6 +33,7 @@ CNN에서는 주로 ReLu라는 함수를 활성함수로 사용하며 이는 Con
 활성함수의 예로는 sigmoid function, ReLu, ReLu6 등이 존재한다.
 
 ![Alt text](/img/ReLu.jpg)
+
 위의 그림이 ReLU 함수이다.
 
 ## Pooling layer
@@ -71,6 +73,7 @@ CNN에서 Fully connect layer를 적용하게 되면 3차원(높이x넓이x색�
 cf. Convolution과 Pooling Layer를 별개의 Layer으로 보기도 한다.
 
 ![Alt text](/img/AlexNet.jpg)
+
 위의 그림은 위에서 설명한 AlexNet의 구성을 나타내는 그림이다.
 
 [출처](https://bskyvision.com/421) 
@@ -80,6 +83,7 @@ VGGNet은 옥스포드 대학의 연구팀 VGG에 의해 개발된 모델로써,
 
 ![Alt text](/img/vgg16_1.jpg)
 ![Alt text](/img/vgg16_2.jpg)
+
 위의 그림은 VGG-16의 전체 구성이다.
 
 이와 같이 conv, pooling, FC Layer 등으로 구성된 다양한 종류의 CNN이 존재함을 알 수 있다.
