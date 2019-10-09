@@ -64,6 +64,10 @@ cf. Convolution과 Pooling Layer를 별개의 Layer으로 보기도 한다.
 
 [출처](https://bskyvision.com/421) 
 
+## VGG-16
+아래 그림은 VGG-16 Net의 전체 구성이다.
+
+위의 그림과 같이 CNN가 구성됨을 볼 수 있다.
 
 # numpy
 고차원의 수 계산과 과학 연산을 위해 만들어진 파이썬 라이브러리로써, 벡터 및 행렬계산에 있어 편리한 기능(함수)를 제공함
