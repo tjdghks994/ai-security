@@ -107,14 +107,19 @@ out.backward(torch.randn(1, 10))
 
 ########################################################################
 # .. note::
-# torch.nn은 mini-batch만을 지원합니다. torch.nn 패키지 전체는 mini-batch 형태인 입력만을 지원합니다. 단일 데이터는 입력으로 취급하지 않습니다. 예를 들어서, nn.Conv2d는 데이터건수 x 채널수 x 높이 x 너비 형식의 4D Tensor를 취합니다. 1개 데이터를 네트웍에 입력해야 한다면, input.unsqueexe(0)을 이용하여 가짜 임시 배치 차원을 추가해서 사용합니다.
+# torch.nn은 mini-batch만을 지원합니다. torch.nn 패키지 전체는 mini-batch 형태인 입력만을 지원합니다. 단일 데이터는 입력으로 취급하지 않습니다.
+# 예를 들어서, nn.Conv2d는 데이터건수 x 채널수 x 높이 x 너비 형식의 4D Tensor를 취합니다.
+# 1개 데이터를 네트웍에 입력해야 한다면, input.unsqueexe(0)을 이용하여 가짜 임시 배치 차원을 추가해서 사용합니다.
 #
 #
 # **Recap:**
 #   -  torch.Tensor - backward()와 같은 autograd 연산을 지원하는 다차원 배열이며 텐서에 대한 gradient를 가지고 있다.
-#   -  nn.Module - neural network 모듈로서 파라미터를 GPU로 옮기거나, 내보내기, 불러오기 등의 보조 작업을 이용하여 파라미터를 캡슐화하는 편리한 방법이다.
+#   -  nn.Module - neural network 모듈로서 파라미터를 GPU로 옮기거나, 내보내기, 불러오기 등의 보조 작업을 이용하여
+#                   파라미터를 캡슐화하는 편리한 방법이다.
 #   -  nn.Parameter - 텐서의 일종으로 Module에 속성으로 할당 될 때 파라미터로 자동으로 등록된다.
-#   -  autograd.Function - autograd 연산의 forward와 backward에 대한 정의를 구현한다. 모든 텐서 연산은 최소한 하나의 Function 노드를 생성하는데, 이 노드는 텐서를 생성하고 기록을 인코딩하는 여러 함수들에 연결된다.
+#   -  autograd.Function - autograd 연산의 forward와 backward에 대한 정의를 구현한다.
+#                       모든 텐서 연산은 최소한 하나의 Function 노드를 생성하는데,
+#                       이 노드는 텐서를 생성하고 기록을 인코딩하는 여러 함수들에 연결된다.
 #
 # **지금까지 한 것 :**
 #   -  neural network 정의
@@ -149,18 +154,21 @@ print(loss)
 #           -> MSELoss
 #           -> loss
 #
-# 따라서, loss.backward()를 호출하면 전체 그래프는 손실에 대하여 미분 계산이 수행되며, 그래프 내의 requires_grad = True인 모든 텐서들은 gradient로 누적된 .grad 텐서를 갖게 된다.
+# 따라서, loss.backward()를 호출하면 전체 그래프는 손실에 대하여 미분 계산이 수행되며,
+# 그래프 내의 requires_grad = True인 모든 텐서들은 gradient로 누적된 .grad 텐서를 갖게 된다.
 #
 # 예를 들어 몇가지 단계를 역으로 진행하면 다음과 같다:
 
 print(loss.grad_fn)  # MSELoss와 관련된 것은 grad_fn에 저장되어있음.
 print(loss.grad_fn.next_functions[0][0])  # Linear과 관련된 것은 .next_functions[0][0]을 통해 알 수 있음.
-print(loss.grad_fn.next_functions[0][0].next_functions[0][0])  # ReLU와 관련된 것은 .next_functions[0][0].next_functions[0][0]을 통해 알 수 있음
+print(loss.grad_fn.next_functions[0][0].next_functions[0][0])
+# ReLU와 관련된 것은 .next_functions[0][0].next_functions[0][0]을 통해 알 수 있음
 
 ########################################################################
 # Backprop(역전파)
 # --------
-# 에러를 역전파하기 위해 사용자는 loss.backward()를 호출하면 된다. 다만 기존에 존재하는 gradients를 초기화할 필요가 있다. 그렇지 않으면 gradients가 기존의 gradients에 누적되어 저장되기 때문이다.
+# 에러를 역전파하기 위해 사용자는 loss.backward()를 호출하면 된다. 다만 기존에 존재하는 gradients를 초기화할 필요가 있다.
+# 그렇지 않으면 gradients가 기존의 gradients에 누적되어 저장되기 때문이다.
 #
 #
 # loss.backward()를 호출하고 backward 호출 이전과 이후의 conv1's bias gradient를 살펴보자.
