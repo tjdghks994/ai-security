@@ -28,4 +28,4 @@ print(factorial(6))
 [PyTorch-ko](https://9bow.github.io/PyTorch-tutorials-kr-0.3.1/index.html),
 [PyTorch-github](https://github.com/pytorch/tutorials/tree/master/beginner_source)
 - Advantage: 다양한 함수에 대해 많은 검색을 통해 자세히 기술한 경우 높은 점수 부여
-
+- 최종 채점은 마감기한이 지난 후 First Assignment 폴더 안의 파일에 대해서만 채점할 예정이며, 수정 사항이 있다면 과제 마감기한 전까지는 언제든 재업로드가 가능합니다. 또한 github 사용법에대한 평가도 같이 진행되므로, **제가 별도의 조작 없이 PR를 진행하였을 때 올바른 경로(조교 repository의 First Assignment 폴더 안)에 들어가있지 않은 파일에 대해서는 감점 처리를 하도록 하겠습니다. 폴더명(대소문자, 띄어쓰기 확실히 구분)**
