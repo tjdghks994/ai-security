@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """Advanced CNN.ipynb
 
-Lee_Wooseong_Advanced_reference.md 에서 이어지는 내용입니다.
+Lee_Wooseong_Advanced_reference.md 에서 이어지는 내용입니다. 
+레퍼런스 파일을 참고하고 읽어주세요.
 
 """
 
