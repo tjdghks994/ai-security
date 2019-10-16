@@ -50,4 +50,4 @@ Advanced CNN의 핵심은 바로 conv layer를 만드는 과정에서 1x1 필터
 
 이렇게 여러 개의 conv layer를 합쳐서 하나의 pooling layer로 바꾸는 과정을 Inception Module이라고 하는데, 이러한 inception module들을 이어붙이면 기존의 CNN보다 더 의미있는 특징 추출과 라벨 분류 학습이 가능하다는 게 Advanced CNN의 아이디어이다. 
 
-Pytorch를 이용한 Advanced CNN의 구현을 아래 코드에서 설명해보겠다.
+Pytorch에서 Advanced CNN의 구현은 Lee_Wooseong_Advanced_CNN.py 에서 구현하겠습니다.
