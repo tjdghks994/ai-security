@@ -79,7 +79,7 @@ for i in dict_a:
 
 # 함수 만들어 쓰기
 print("\n")
-def factorial(n):                               # factorial 함수 실행
+def factorial(n):                               # factorial 함수 선언
     result = 1                                  # 0부터 시작하면 모두 0이 나오므로 1로 초기화
     for i in range(1, n+1):                     # range 안의 왼쪽 값부터 오른쪽 값까지 실행
         result = result * i
