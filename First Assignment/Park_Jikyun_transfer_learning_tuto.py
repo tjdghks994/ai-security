@@ -178,15 +178,15 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=25): # 총 25
             else:
                 model.eval()   # 모델을 평가 모드로 설정
 
-            running_loss = 0.0 # 초기화
-            running_corrects = 0 # 초기화
+            running_loss = 0.0 # 교차엔트로피오차를 0으로 만드는 것이 목표
+            running_corrects = 0 
 
             # 데이터를 반복
             for inputs, labels in dataloaders[phase]: # dataloader로부터 input dataset과 그에 할당된 label을 불러옴
                 inputs = inputs.to(device) # GPU에 input dataset을 올림
                 labels = labels.to(device) # GPU에 label을 올림
 
-                # 매개변수 경사도를 0으로 설정
+                # 매개변수 경사도(Gradient)를 0으로 설정
                 optimizer.zero_grad()
 
                 # 학습 시에만 연산 기록을 추적
@@ -198,11 +198,11 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=25): # 총 25
                     # 학습 단계인 경우 역전파 + 최적화
                     if phase == 'train': # Training 모드에서는 weight를 update
                         loss.backward()
-                        optimizer.step()
+                        optimizer.step() # 매개변수를 갱신하는 step 함수
 
                 # 통계
-                running_loss += loss.item() * inputs.size(0)
-                running_corrects += torch.sum(preds == labels.data)
+                running_loss += loss.item() * inputs.size(0) # 교차엔트로피오차를 갱신
+                running_corrects += torch.sum(preds == labels.data) # 정확도 갱신
 
             epoch_loss = running_loss / dataset_sizes[phase] 
             epoch_acc = running_corrects.double() / dataset_sizes[phase]
