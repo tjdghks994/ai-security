@@ -163,11 +163,11 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
 def train_model(model, criterion, optimizer, scheduler, num_epochs=25): # 총 25 에폭
     since = time.time() # 시작 시간을 기록(총 소요 시간 계산을 위해)
 
-    best_model_wts = copy.deepcopy(model.state_dict()) 
+    best_model_wts = copy.deepcopy(model.state_dict()) # 예측 모델 deepcopy(깊은 복사)
     best_acc = 0.0
 
-    for epoch in range(num_epochs):
-        print('Epoch {}/{}'.format(epoch, num_epochs - 1))
+    for epoch in range(num_epochs): # 매 에폭마다
+        print('Epoch {}/{}'.format(epoch, num_epochs - 1)) # Epoch 1/19, Epoch 2/19 ....
         print('-' * 10)
 
         # 각 epoch 마다 학습 단계와 검증 단계
@@ -178,8 +178,8 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=25): # 총 25
             else:
                 model.eval()   # 모델을 평가 모드로 설정
 
-            running_loss = 0.0
-            running_corrects = 0
+            running_loss = 0.0 # 초기화
+            running_corrects = 0 # 초기화
 
             # 데이터를 반복
             for inputs, labels in dataloaders[phase]: # dataloader로부터 input dataset과 그에 할당된 label을 불러옴
@@ -204,10 +204,10 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=25): # 총 25
                 running_loss += loss.item() * inputs.size(0)
                 running_corrects += torch.sum(preds == labels.data)
 
-            epoch_loss = running_loss / dataset_sizes[phase]
+            epoch_loss = running_loss / dataset_sizes[phase] 
             epoch_acc = running_corrects.double() / dataset_sizes[phase]
 
-            print('{} Loss: {:.4f} Acc: {:.4f}'.format(phase, epoch_loss, epoch_acc))
+            print('{} Loss: {:.4f} Acc: {:.4f}'.format(phase, epoch_loss, epoch_acc)) # 교차엔트로피오차, 정확도 출력
 
             # 모델을 깊은 복사(deep copy)함
             if phase == 'val' and epoch_acc > best_acc:
@@ -217,8 +217,8 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=25): # 총 25
         print()
 
     time_elapsed = time.time() - since
-    print('Training complete in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60))
-    print('Best val Acc: {:4f}'.format(best_acc))
+    print('Training complete in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60)) # 총 훈련 소요 시간
+    print('Best val Acc: {:4f}'.format(best_acc)) # 이미지 분류 정확도 
 
     # 가장 나은 모델 가중치를 불러옴
     model.load_state_dict(best_model_wts)
