@@ -40,6 +40,6 @@ print(factorial(6))
   
 - Task
   - 11/20: Projet proposal (with prof. lee)
-  - 11/27: Try a project
+  - 11/27: Testing a project
   - 12/4: Find problems and improvements
   - 12/11: Submit report
