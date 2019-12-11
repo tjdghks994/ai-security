@@ -5,6 +5,10 @@
 
 조교: 박성환, 서예령
 
+## 조교 평가
+
+https://forms.gle/VATqxs838vmgvWGbA
+
 # Indivisual Assessment
 ## 1st assignment
 - Due date: 10.18(fri)
